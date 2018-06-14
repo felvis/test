@@ -23,12 +23,10 @@ phases:
       # - command
   post_build:
     commands:
-       - echo Warning
+       - echo 'Warning!!!'
        - echo $CODEBUILD_BUILD_SUCCEEDING
        - if [ -z "$CODEBUILD_BUILD_SUCCEEDING" ]; then  echo 'negood'; else echo 'good'; fi
-       - echo $CODEBUILD_INITIATOR
        - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
-       - echo $CODEBUILD_SRC_DIR
 artifacts:
   files:
      - /tmp/*
