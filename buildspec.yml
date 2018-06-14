@@ -19,7 +19,7 @@ phases:
       # - command
   build:
     commands:
-       - touch /tmp/test 
+       - touch /tmp/test && touch /tmp/test22
       # - command
   post_build:
     commands:
