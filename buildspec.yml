@@ -25,7 +25,7 @@ phases:
     commands:
        - echo Warning
        - echo $CODEBUILD_BUILD_SUCCEEDING
-       - if [ -z "$EXT" ]; then echo 'good' else echo 'negood'
+       - if [ -z "$EXT" ]; then echo 'good' else echo 'negood' fi
        - echo $CODEBUILD_INITIATOR
        - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
        - echo $CODEBUILD_SRC_DIR
