@@ -27,6 +27,7 @@ phases:
        - echo $CODEBUILD_BUILD_SUCCEEDING
        - if [ -z "$CODEBUILD_BUILD_SUCCEEDING" ]; then  echo 'negood'; else echo 'good'; fi
        - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
+       - echo 'end'
 artifacts:
   files:
      - /tmp/*
