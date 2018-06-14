@@ -1,0 +1,40 @@
+version: 0.2
+
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+
+phases:
+  #install:
+   # commands:
+    #   - 
+      # - command
+  #pre_build:
+    #commands:
+      # - command
+      # - command
+  build:
+    commands:
+       - touch /tmp/test 
+      # - command
+  post_build:
+    commands:
+       - echo Warning
+       - echo $CODEBUILD_BUILD_SUCCEEDING
+       - if [ -z "$EXT" ]; then echo 'good' else echo 'negood'
+       - echo $CODEBUILD_INITIATOR
+       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
+       - echo $CODEBUILD_SRC_DIR
+artifacts:
+  files:
+     - /tmp/*
+    # - location
+  #discard-paths: yes
+  #base-directory: location
+#cache:
+  #paths:
+    # - paths
