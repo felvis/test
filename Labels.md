@@ -88,10 +88,12 @@ REQUEST:
 POST https://api.github.com/repos/felvis/test/issues/1/labels
 HEADERS: Content-Type, Authorization
 BODY:
+```
 ["Approved for Merge"]
 
 RESPONSE:
-```[
+```
+[
     {
         "id": 958229061,
         "node_id": "MDU6TGFiZWw5NTgyMjkwNjE=",
@@ -100,5 +102,5 @@ RESPONSE:
         "color": "6cc644",
         "default": false
     }
-]```
+]
 
