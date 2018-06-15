@@ -23,12 +23,10 @@ phases:
       # - command
   post_build:
     commands:
-       - echo 'Warning!!!'
        - echo $CODEBUILD_BUILD_SUCCEEDING
        - PL_NUMBER=`echo $CODEBUILD_SOURCE_VERSION | cut -c 4-`
        - echo $PL_NUMBER
-       - if [ -z "$CODEBUILD_BUILD_SUCCEEDING" ]; then  echo 'negood'; else echo 'good'; fi
-       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
+       - if [ -z "$CODEBUILD_BUILD_SUCCEEDING" ]; then  "echo 0"; else "echo 1"; fi
 artifacts:
   files:
      - /tmp/*
