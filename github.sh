@@ -13,7 +13,7 @@ CODEBUILD_BUILD_ARN=$4
 BUILD_ID=`echo $CODEBUILD_BUILD_ARN | cut -d"/" -f2- | cut -d":" -f2`
 PL_NUMBER=`echo $CODEBUILD_SOURCE_VERSION | cut -c 4-`
 S3_LINK=`https://s3.amazonaws.com/fe607e7f53333bcbf0dbb943367afd4/$BUILD_ID/artifacts.zip`
-echo $S3_LINK
+echo "Link to file - $S3_LINK"
 
 
 echo $CODEBUILD_BUILD_ARN
