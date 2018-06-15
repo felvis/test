@@ -91,7 +91,7 @@ BODY:
 ["Approved for Merge"]
 
 RESPONSE:
-[
+```[
     {
         "id": 958229061,
         "node_id": "MDU6TGFiZWw5NTgyMjkwNjE=",
@@ -100,4 +100,5 @@ RESPONSE:
         "color": "6cc644",
         "default": false
     }
-]
+]```
+
