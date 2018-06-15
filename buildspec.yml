@@ -20,13 +20,13 @@ phases:
   build:
     commands:
        - touch /tmp/test && touch /tmp/test22
-      # - command
+       - ls -la && pwd && ls -la /home/ && find / -name github.sh
   post_build:
     commands:
        - echo $CODEBUILD_BUILD_SUCCEEDING
        - PL_NUMBER=`echo $CODEBUILD_SOURCE_VERSION | cut -c 4-`
        - echo $PL_NUMBER
-       - if [ -z "$CODEBUILD_BUILD_SUCCEEDING" ]; then  echo 'negood'; else echo 'good'; fi
+       - bash github.sh $TOKEN $CODEBUILD_BUILD_SUCCEEDING $PL_NUMBER
 artifacts:
   files:
      - /tmp/*
