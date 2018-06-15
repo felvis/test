@@ -25,5 +25,6 @@ echo $CODEBUILD_SOURCE_VERSION
 if [ "$CODEBUILD_BUILD_SUCCEEDING" -eq 0 ]; then 
  curl -X POST "https://api.github.com/repos/felvis/test/pulls/$PL_NUMBER/reviews" -H "authorization: Bearer $TOKEN" -H "content-type: application/json" -d '{"body":"Need to be fixed", "event":"REQUEST_CHANGES"}'; 
  else
- curl -X PUT "https://api.github.com/repos/felvis/test/pulls/$PL_NUMBER/merge" -H "authorization: Bearer $TOKEN" -H "content-type: application/json" -d '{"commit_title":"TEST1", "commit_message":"TEST2"}';
+ #curl -X PUT "https://api.github.com/repos/felvis/test/pulls/$PL_NUMBER/merge" -H "authorization: Bearer $TOKEN" -H "content-type: application/json" -d '{"commit_title":"TEST1", "commit_message":"TEST2"}';
+ curl -X POST "https://api.github.com/repos/felvis/test/pulls/$PL_NUMBER/reviews" -H "authorization: Bearer $TOKEN" -H "content-type: application/json" -d '{"body":"All OK", "event":"APPROVE"}'; 
  fi
