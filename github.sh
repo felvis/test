@@ -18,5 +18,5 @@ echo $PL_NUMBER
 if [ -z "$CODEBUILD_BUILD_SUCCEEDING" ]; then 
  curl -X POST "https://api.github.com/repos/felvis/test/pulls/$PL_NUMBER/reviews" -H "authorization: Bearer $TOKEN" -H "content-type: application/json" -d '{"body":"Need to be fixed", "event":"REQUEST_CHANGES"}'; 
  else
- curl -X PUT "https://api.github.com/repos/felvis/test/pulls/$PL_NUMBER/merge" -H "authorization: Bearer $TOKEN" -H "content-type: application/json" -d '{"commit_message":"s3link"}';
+ curl -X PUT "https://api.github.com/repos/felvis/test/pulls/$PL_NUMBER/merge" -H "authorization: Bearer $TOKEN" -H "content-type: application/json" -d '{"commit_message":"You can find aritifacts on s3 via this link - s3link"}';
  fi
