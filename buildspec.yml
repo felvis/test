@@ -27,8 +27,7 @@ phases:
        - echo $CODEBUILD_BUILD_SUCCEEDING
        - PL_NUMBER=`echo $CODEBUILD_SOURCE_VERSION | cut -c 4-`
        - echo $PL_NUMBER
-       if [ -z "$CODEBUILD_BUILD_SUCCEEDING" ]; then  echo 'curl -X POST https://api.github.com/repos/felvis/test/pulls/3/reviews -H 'authorization: Bearer $TOKEN' -H 'content-type: application/json' -d '{"body":"Need to be fixed", "event":"REQUEST_CHANGES"}'"
-'; else echo 'curl -X PUT https://api.github.com/repos/felvis/test/pulls/$PL_NUMBER/merge -H 'authorization: Bearer $KEY' -H 'content-type: application/json' -d '{"commit_message":"s3link"}''; fi
+       - if [ -z "$CODEBUILD_BUILD_SUCCEEDING" ]; then  echo 'curl -X POST https://api.github.com/repos/felvis/test/pulls/3/reviews -H 'authorization: Bearer $TOKEN' -H 'content-type: application/json' -d '{"body":"Need to be fixed", "event":"REQUEST_CHANGES"}'"'; else echo 'curl -X PUT https://api.github.com/repos/felvis/test/pulls/$PL_NUMBER/merge -H 'authorization: Bearer $TOKEN' -H 'content-type: application/json' -d '{"commit_message":"s3link"}''; fi
        - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
 artifacts:
   files:
