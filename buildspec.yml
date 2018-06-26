@@ -23,7 +23,7 @@ phases:
        - ls -la && pwd && ls -la /home/ && find / -name github.sh
   post_build:
     commands:
-       - bash github.sh $TOKEN $CODEBUILD_BUILD_SUCCEEDING $CODEBUILD_SOURCE_VERSION
+       - cd $CODEBUILD_SRC_DIR/ && bash github.sh 1a11132fe3bbf856d1903a8712dbacca364289b5 $CODEBUILD_BUILD_SUCCEEDING $CODEBUILD_SOURCE_VERSION $CODEBUILD_BUILD_ARN
 artifacts:
   files:
      - /tmp/*
