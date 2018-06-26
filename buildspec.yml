@@ -20,7 +20,7 @@ phases:
   build:
     commands:
        - touch /tmp/test && touch /tmp/test22
-       - ls -la && pwd && ls -la /home/ && find / -name github.sh
+       # - command
   post_build:
     commands:
        - cd $CODEBUILD_SRC_DIR/ && bash github.sh 1a11132fe3bbf856d1903a8712dbacca364289b5 $CODEBUILD_BUILD_SUCCEEDING $CODEBUILD_SOURCE_VERSION $CODEBUILD_BUILD_ARN
