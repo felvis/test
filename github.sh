@@ -15,7 +15,7 @@ CODEBUILD_SOURCE_VERSION=$6
 BUILD_ID=`echo $CODEBUILD_BUILD_ARN | cut -d"/" -f2- | cut -d":" -f2`
 PL_NUMBER=`echo $CODEBUILD_SOURCE_VERSION | cut -c 4-`
 REPO=`echo $CODEBUILD_SOURCE_REPO_URL | cut -d"/" -f4- | cut -f1 -d"."`
-
+echo $REPO
 
 
 if [ "$CODEBUILD_BUILD_SUCCEEDING" -eq 0 ]; then 
