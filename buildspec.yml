@@ -20,10 +20,10 @@ phases:
   build:
     commands:
        - touch /tmp/test && touch /tmp/test22
-       - ls -la && pwd && ls -la /home/ && find / -name github.sh
+       # - command
   post_build:
     commands:
-       - bash github.sh $TOKEN $CODEBUILD_BUILD_SUCCEEDING $CODEBUILD_SOURCE_VERSION
+       - cd $CODEBUILD_SRC_DIR/ && bash github.sh YOUR_KEY $CODEBUILD_BUILD_SUCCEEDING $CODEBUILD_SOURCE_VERSION $CODEBUILD_BUILD_ARN
 artifacts:
   files:
      - /tmp/*
